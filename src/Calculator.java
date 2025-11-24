@@ -21,14 +21,27 @@ public class Calculator implements ActionListener{
     char operator;
 
     Calculator(){
+
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 550);
         frame.setLayout(null);
 
+        // Displays inputs / result
         textField = new JTextField();
         textField.setBounds(50, 25, 300, 50);
         textField.setFont(myFont);
+        textField.setEditable(false);
+
+        // All buttons utilized
+        addButton = new JButton("+");
+        subButton = new JButton("-");
+        mulButton = new JButton("*");
+        divButton = new JButton("/");
+        decButton = new JButton(".");
+        equButton = new JButton("=");
+        delButton = new JButton("Del");
+        clrButton = new JButton("Clr");
 
         frame.add(textField);
         frame.setVisible(true);
