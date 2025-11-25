@@ -68,6 +68,11 @@ public class Calculator implements ActionListener{
             numButtons[i].setFocusable(false);
         }
 
+        delButton.setBounds(50, 430, 145, 50);
+        clrButton.setBounds(205, 430, 145, 50);
+
+        frame.add(delButton);
+        frame.add(clrButton);
         frame.add(textField);
         frame.setVisible(true);
     }
