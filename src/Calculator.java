@@ -115,5 +115,11 @@ public class Calculator implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e){
         
+        // Update text field based on number button pressed
+        for(int i = 0; i < 10; i++){
+            if(e.getSource() == numButtons[i]){
+                textField.setText(textField.getText().concat(String.valueOf(i)));
+            }
+        }
     }
 }
