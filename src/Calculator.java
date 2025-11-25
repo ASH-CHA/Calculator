@@ -53,6 +53,21 @@ public class Calculator implements ActionListener{
         funcButtons[6] = delButton;
         funcButtons[7] = clrButton;
 
+        for(int i = 0; i < 8; i++){
+            funcButtons[i].addActionListener(this);
+            funcButtons[i].setFont(myFont);
+            // Removes outline of button
+            funcButtons[i].setFocusable(false);
+        }
+
+        // All Number Buttons Initialized
+        for(int i = 0; i < 10; i++){
+            numButtons[i] = new JButton(String.valueOf(i));
+            numButtons[i].addActionListener(this);
+            numButtons[i].setFont(myFont);
+            numButtons[i].setFocusable(false);
+        }
+
         frame.add(textField);
         frame.setVisible(true);
     }
