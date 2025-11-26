@@ -189,5 +189,13 @@ public class Calculator implements ActionListener{
             }
         }
 
+        // Turns num in textfield negative
+        if(e.getSource() == negButton){
+            double temp = Double.parseDouble(textField.getText());
+            temp *= -1;
+
+            textField.setText(String.valueOf(temp));
+        }
+
     }
 }
