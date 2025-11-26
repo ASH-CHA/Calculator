@@ -168,11 +168,22 @@ public class Calculator implements ActionListener{
             }
             textField.setText(String.valueOf(result));
             num1 = result;
-            
-            // Clear textField
-            if(e.getSource() == clrButton){
-                textField.setText("");
+        }
+
+        // Clear textField
+        if(e.getSource() == clrButton){
+            textField.setText("");
+        }
+
+        // Deletes last variable in textField
+        if(e.getSource() == delButton){
+            String str = textField.getText();
+            textField.setText("");
+
+            for(int i = 0; i < str.length() - 1; i++){
+                textField.setText(textField.getText() + str.charAt(i));
             }
         }
+
     }
 }
