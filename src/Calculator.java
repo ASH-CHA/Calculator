@@ -167,8 +167,10 @@ public class Calculator implements ActionListener{
                     break;
                 case '*':
                     result = num1 * num2;
+                    break;
                 case '/':
                     result = num1 / num2;
+                    break;
             }
             textField.setText(String.valueOf(result));
             num1 = result;
