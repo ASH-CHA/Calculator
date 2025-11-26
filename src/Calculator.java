@@ -10,9 +10,9 @@ public class Calculator implements ActionListener{
     JTextField textField;
 
     JButton[] numButtons = new JButton[10];
-    JButton[] funcButtons = new JButton[8];
+    JButton[] funcButtons = new JButton[9];
     JButton addButton, subButton, mulButton, divButton;
-    JButton decButton, equButton, delButton, clrButton;
+    JButton decButton, equButton, delButton, clrButton, negButton;
     JPanel panel;
 
     Font myFont = new Font("Ink Free", Font.BOLD, 30);
@@ -42,6 +42,7 @@ public class Calculator implements ActionListener{
         equButton = new JButton("=");
         delButton = new JButton("Del");
         clrButton = new JButton("Clr");
+        negButton = new JButton("(-)");
 
         // Adding buttons to funcButtons array
         funcButtons[0] = addButton;
@@ -52,8 +53,9 @@ public class Calculator implements ActionListener{
         funcButtons[5] = equButton;
         funcButtons[6] = delButton;
         funcButtons[7] = clrButton;
+        funcButtons[8] = negButton;
 
-        for(int i = 0; i < 8; i++){
+        for(int i = 0; i < 9; i++){
             funcButtons[i].addActionListener(this);
             funcButtons[i].setFont(myFont);
             // Removes outline of button
@@ -68,8 +70,9 @@ public class Calculator implements ActionListener{
             numButtons[i].setFocusable(false);
         }
 
-        delButton.setBounds(50, 430, 145, 50);
-        clrButton.setBounds(205, 430, 145, 50);
+        negButton.setBounds(50, 430, 100, 50);
+        delButton.setBounds(150, 430, 100, 50);
+        clrButton.setBounds(250, 430, 100, 50);
 
         // Set grid for buttons
         panel = new JPanel();
@@ -102,6 +105,7 @@ public class Calculator implements ActionListener{
         panel.add(divButton);
 
         frame.add(panel);
+        frame.add(negButton);
         frame.add(delButton);
         frame.add(clrButton);
         frame.add(textField);
